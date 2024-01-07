@@ -1,0 +1,4 @@
+{ ime = Stefan, prezime = Stefanovic, iznosNetoPlate = 50000.00, radnaPozicija = traktor }
+{ ime = Jovan, prezime = Jovanovic, iznosNetoPlate = 60000.00, radnaPozicija = kamion }
+{ ime = Marko, prezime = Markovic, iznosNetoPlate = 70000.00, radnaPozicija = autobus }
+{ ime = Nikola, prezime = Nikolic, iznosNetoPlate = 80000.00, radnaPozicija = kombi }

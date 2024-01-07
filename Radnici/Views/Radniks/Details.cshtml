@@ -1,0 +1,67 @@
+﻿@model Radnici.Models.Radnik
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Radnik</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ime)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ime)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.prezime)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.prezime)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.adresa)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.adresa)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.iznosNetoPlate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.iznosNetoPlate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.radnaPozicija)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.radnaPozicija)
+        </dd>
+    </dl>
+</div>
+<div>
+    <form asp-controller="Radniks" asp-route-id="@Model?.Id" asp-action="exportToPDF">
+        <small>Vidi detalje o izracunavanju bruto plate u pdf-u</small>
+     <p><input type="submit" value="Exportuj u pdf" /></p>
+     </form>
+     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+     <a asp-action="Index">Back to List</a>
+
+    <form asp-controller="Radniks" asp-route-id="@Model?.Id" asp-action="convertToUSD">
+        <small>Pretvori platu u USD</small>
+        <p><input type="submit" value="Pretvori u USD"/></p>
+    </form>
+    <form asp-controller="Radniks" asp-route-id="@Model?.Id" asp-action="convertToEUR">
+        <small>Pretvori platu u EUR</small>
+        <p><input type="submit" value="Pretvori u EUR" /></p>
+    </form>
+
+    <form asp-controller="Radniks" asp-route-id="@Model?.Id" asp-action="sendPDFEmail">
+        <small>Pošalji email sa detaljima o plati u obliku PDF-a</small>
+        <p><input type="submit" value="Pošalji Email" /></p>
+    </form>
+
+</div>
