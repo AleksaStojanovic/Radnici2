@@ -64,7 +64,7 @@ namespace Radnici.Controllers
             var radnici = from r in _context.Radnik select r;
 
 
-            string filePath = "C:\\Users\\aleks\\OneDrive\\Desktop\\Radnici-Current - Copy (2)\\Radnici\\Saves\\radnici.csv";
+            string filePath = "";
 
             using (StreamWriter writer = new StreamWriter(filePath))
             {
@@ -325,7 +325,7 @@ namespace Radnici.Controllers
             IFormFile formFile = new CustomFormFile(memoryStream, "file.pdf", "application/pdf");
 
 
-            logic.sendEmail("aleksastojanovicz@outlook.com", formFile);
+            logic.sendEmail("", formFile);
 
 
 
